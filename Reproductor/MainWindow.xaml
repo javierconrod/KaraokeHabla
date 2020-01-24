@@ -5,14 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Reproductor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="247.759" Width="348">
+        Title="MainWindow" Height="261.273" Width="352.504">
     <Grid>
-        <TextBox x:Name="txtDirectorio" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="238" IsEnabled="False"/>
-        <Button x:Name="btnExaminar" Content="Examinar" HorizontalAlignment="Left" Margin="253,10,0,0" VerticalAlignment="Top" Width="76" Height="23" Click="BtnExaminar_Click"/>
-        <Button x:Name="btnReproducir" Content="Reproducir" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Width="76" Height="23" Click="btnReproducir_Click"/>
-        <Slider x:Name="sldReproduccion" Thumb.DragStarted="SldTiempo_DragStarted" Thumb.DragCompleted="SldTiempo_DragCompleted" HorizontalAlignment="Left" Margin="10,189,0,0" VerticalAlignment="Top" Width="319"/>
-        <TextBlock x:Name="lblLetra" HorizontalAlignment="Left" Margin="10,81,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-        <ProgressBar x:Name="pbReproduccion" HorizontalAlignment="Left" Height="15" Margin="10,169,0,0" VerticalAlignment="Top" Width="320"/>
+        <Button x:Name="btnReproducir" Content="Reproducir" Margin="134,84,135,83" Click="btnReproducir_Click" Visibility="Collapsed"/>
+        <TextBlock x:Name="lblLetra" HorizontalAlignment="Left" Margin="26,46,0,0" TextWrapping="Wrap" Text="FRAGMENTS OF TIME - Daft Punk" VerticalAlignment="Top" Width="265" Height="108" TextAlignment="Center" FontStyle="Italic" TextDecorations="{x:Null}" FontSize="18" FontFamily="Kozuka Gothic Pr6N H"/>
+        <ProgressBar x:Name="pbReproduccion" HorizontalAlignment="Left" Height="15" Margin="9,192,0,0" VerticalAlignment="Top" Width="320">
+            <ProgressBar.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF96ABFB" Offset="0"/>
+                    <GradientStop Color="#FF182C83" Offset="1"/>
+                </LinearGradientBrush>
+            </ProgressBar.Foreground>
+        </ProgressBar>
+        <TextBlock x:Name="lblTiempo" HorizontalAlignment="Left" Margin="280,171,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

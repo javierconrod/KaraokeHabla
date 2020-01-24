@@ -36,11 +36,12 @@ namespace Reproductor
         //exclusivo para salidas
         WaveOut output;
 
-        bool dragging = false;
         public MainWindow()
         {
             InitializeComponent();
-            btnReproducir.IsEnabled = false;
+            btnReproducir.IsEnabled = true;
+            lblLetra.Visibility = Visibility.Collapsed;
+            btnReproducir.Visibility = Visibility.Visible;
 
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromMilliseconds(500);
@@ -50,88 +51,87 @@ namespace Reproductor
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            if(!dragging)
+            pbReproduccion.Value = reader.CurrentTime.TotalSeconds;
+            if (pbReproduccion.Value > 30 && pbReproduccion.Value < 33)
             {
-                sldReproduccion.Value = reader.CurrentTime.TotalSeconds;
-                pbReproduccion.Value = reader.CurrentTime.TotalSeconds;
+                lblLetra.Text = "DRIVING THIS ROAD DOWN TO PARADISE";
             }
-        }
+            else if (pbReproduccion.Value > 34 && pbReproduccion.Value < 37)
+            {
+                lblLetra.Text = "LETTING THE SUNLIGHT INTO MY EYES";
+            }
+            else if (pbReproduccion.Value > 38 && pbReproduccion.Value < 41)
+            {
+                lblLetra.Text = "OUR ONLY PLAN IS TO IMPROVISE";
+            }
+            else if (pbReproduccion.Value > 41 && pbReproduccion.Value < 45)
+            {
+                lblLetra.Text = "AND IT'S CRYSTAL CLEAR THAT I DON'T EVER WAIT TO END";
+            }
+            else if (pbReproduccion.Value > 45&& pbReproduccion.Value < 49)
+            {
+                lblLetra.Text = "IF I HAD MY WAY, I WOULD NEVER LEAVE";
+            }
+            else if (pbReproduccion.Value > 49 && pbReproduccion.Value < 53)
+            {
+                lblLetra.Text = "KEEP BUILDING THESE RANDOM MEMORIES";
+            }
+            else if (pbReproduccion.Value > 53 && pbReproduccion.Value < 56)
+            {
+                lblLetra.Text = "TURNING OUR DAYS INTO MELODIES";
+            }
+            else if (pbReproduccion.Value > 56 && pbReproduccion.Value < 59)
+            {
+                lblLetra.Text = "BUT SINCE I CAN'T STAY";
+            }
 
-        private void BtnExaminar_Click(object sender, RoutedEventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            if (openFileDialog.ShowDialog() == true)
+
+            else if (pbReproduccion.Value > 59 && pbReproduccion.Value < 62)
             {
-                txtDirectorio.Text = openFileDialog.FileName;
-                btnReproducir.IsEnabled = true;
+                lblLetra.Text = "I'LL JUST KEEP PLAYING BACK";
             }
+            else if (pbReproduccion.Value > 62 && pbReproduccion.Value < 66)
+            {
+                lblLetra.Text = "THESE FRAGMENTS OF TIME";
+            }
+            else if (pbReproduccion.Value > 66 && pbReproduccion.Value < 73)
+            {
+                lblLetra.Text = "EVERYWHERE I GO, THESE MOMENTS WILL SHINE";
+            }
+            else if (pbReproduccion.Value > 73 && pbReproduccion.Value < 76)
+            {
+                lblLetra.Text = "I'LL JUST KEEP PLAYING BACK";
+            }
+            else if (pbReproduccion.Value > 76 && pbReproduccion.Value < 80)
+            {
+                lblLetra.Text = "THESE FRAGMENTS OF TIME";
+            }
+            else if (pbReproduccion.Value > 80 && pbReproduccion.Value < 89)
+            {
+                lblLetra.Text = "EVERYWHERE I GO, THESE MOMENTS WILL SHINE";
+            }
+
+
+            lblTiempo.Text = pbReproduccion.Value.ToString();
+
         }
 
         private void btnReproducir_Click(object sender, RoutedEventArgs e)
         {
-            if (output != null && output.PlaybackState == PlaybackState.Paused)
-            {
-                //retomar la reproducción
-                output.Play();
-            }
-            else
-            {
-                if (txtDirectorio.Text != null && txtDirectorio.Text != string.Empty)
-                {
-                    reader = new AudioFileReader(txtDirectorio.Text);
-                    output = new WaveOut();
-                    output.PlaybackStopped += Output_PlaybackStopped;
-                    output.Init(reader);
-                    output.Play();
+            reader = new AudioFileReader(@"audio/fragments.mp3");
+            output = new WaveOut();
 
-                }
-            }
-            btnReproducir.IsEnabled = false;
+            output.Init(reader);
+            output.Play();
 
+            btnReproducir.Visibility = Visibility.Collapsed;
+            lblLetra.Visibility = Visibility.Visible;
             pbReproduccion.Maximum = reader.TotalTime.TotalSeconds;
             pbReproduccion.Value = reader.CurrentTime.TotalSeconds;
 
-            sldReproduccion.Maximum = reader.TotalTime.TotalSeconds;
-            sldReproduccion.Value = reader.CurrentTime.TotalSeconds;
+            
 
             timer.Start();
         }
-
-        private void Output_PlaybackStopped(object sender, StoppedEventArgs e)
-        {
-            timer.Stop();
-            reader.Dispose();
-            output.Dispose();
-        }
-
-        private void btnPausa_Click(object sender, RoutedEventArgs e)
-        {
-            if (output != null)
-            {
-                output.Pause();
-                btnReproducir.IsEnabled = true;
-            }
-        }
-
-        private void btnDetener_Click(object sender, RoutedEventArgs e)
-        {
-            if (output != null)
-            {
-                output.Stop();
-                btnReproducir.IsEnabled = true;
-            }
-        }
-        private void SldTiempo_DragStarted(object sender, RoutedEventArgs e)
-        {
-            dragging = true;
-        }
-       private void SldTiempo_DragCompleted(object sender, RoutedEventArgs e)
-       {
-            dragging = false;
-            if(reader != null && output != null && output.PlaybackState != PlaybackState.Stopped)
-            {
-                reader.CurrentTime = TimeSpan.FromSeconds(sldReproduccion.Value);
-            }
-       }
-}
+    }
 }
