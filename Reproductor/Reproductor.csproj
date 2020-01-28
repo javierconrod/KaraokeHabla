@@ -100,9 +100,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="audio\audio.mp3" />
-    <Content Include="audio\fragments.mp3" />
-    <Content Include="audio\gema.mp3" />
+    <Content Include="audio\fragments.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

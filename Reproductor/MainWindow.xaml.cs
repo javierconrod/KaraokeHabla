@@ -90,7 +90,7 @@ namespace Reproductor
             {
                 lblLetra.Text = "I'LL JUST KEEP PLAYING BACK";
             }
-            else if (pbReproduccion.Value > 62 && pbReproduccion.Value < 66)
+            else if (pbReproduccion.Value > 63 && pbReproduccion.Value < 66)
             {
                 lblLetra.Text = "THESE FRAGMENTS OF TIME";
             }
@@ -109,6 +109,94 @@ namespace Reproductor
             else if (pbReproduccion.Value > 80 && pbReproduccion.Value < 89)
             {
                 lblLetra.Text = "EVERYWHERE I GO, THESE MOMENTS WILL SHINE";
+            }
+            else if (pbReproduccion.Value > 89 && pbReproduccion.Value < 105)
+            {
+                lblLetra.Text = "";
+            }
+            else if (pbReproduccion.Value > 105 && pbReproduccion.Value < 107)
+            {
+                lblLetra.Text = "FAMILIAR FACES I'VE NEVER SEEN";
+            }
+            else if (pbReproduccion.Value > 107 && pbReproduccion.Value < 111)
+            {
+                lblLetra.Text = "LIVING THE GOLD AND THE SILVER DREAM";
+            }
+            else if (pbReproduccion.Value > 112 && pbReproduccion.Value < 114)
+            {
+                lblLetra.Text = "MAKING ME FEEL LIKE I'M SEVENTEEN";
+            }
+            else if (pbReproduccion.Value > 114 && pbReproduccion.Value < 118)
+            {
+                lblLetra.Text = "AND IT'S CRYSTAL CLEAR THAT I DON'T EVER WANT IT TO END";
+            }
+            else if (pbReproduccion.Value > 118 && pbReproduccion.Value < 122)
+            {
+                lblLetra.Text = "IF I HAD MY WAY, I WOULD NEVER LEAVE";
+            }
+            else if (pbReproduccion.Value > 122 && pbReproduccion.Value < 126)
+            {
+                lblLetra.Text = "KEEP BUILDING THESE RANDOM MEMORIES";
+            }
+            else if (pbReproduccion.Value > 126 && pbReproduccion.Value < 129)
+            {
+                lblLetra.Text = "TURNING OUR DAYS INTO MELODIES";
+            }
+            else if (pbReproduccion.Value > 129 && pbReproduccion.Value < 132)
+            {
+                lblLetra.Text = "BUT SINCE I CAN'T STAY";
+            }
+            else if (pbReproduccion.Value > 132 && pbReproduccion.Value < 135)
+            {
+                lblLetra.Text = "I'LL JUST KEEP PLAYING BACK";
+            }
+            else if (pbReproduccion.Value > 135 && pbReproduccion.Value < 139)
+            {
+                lblLetra.Text = "THESE FRAGMENTS OF TIME";
+            }
+            else if (pbReproduccion.Value > 139 && pbReproduccion.Value < 146)
+            {
+                lblLetra.Text = "EVERYWHERE I GO, THESE MOMENTS WILL SHINE";
+            }
+            else if (pbReproduccion.Value > 146 && pbReproduccion.Value < 150)
+            {
+                lblLetra.Text = "I'LL JUST KEEP PLAYING BACK";
+            }
+            else if (pbReproduccion.Value > 150 && pbReproduccion.Value < 154)
+            {
+                lblLetra.Text = "THESE FRAGMENTS OF TIME";
+            }
+            else if (pbReproduccion.Value > 154 && pbReproduccion.Value < 160)
+            {
+                lblLetra.Text = "EVERYWHERE I GO, THESE MOMENTS WILL SHINE";
+            }
+            else if (pbReproduccion.Value > 160 && pbReproduccion.Value < (4*60+10))
+            {
+                lblLetra.Text = "";
+            }
+            else if (pbReproduccion.Value > (4*60+10) && pbReproduccion.Value < (4 * 60 + 13))
+            {
+                lblLetra.Text = "I'LL JUST PLAYING BACK";
+            }
+            else if (pbReproduccion.Value > (4*60+13) && pbReproduccion.Value < (4 * 60 + 17))
+            {
+                lblLetra.Text = "THESE FRAGMENTS OF TIME";
+            }
+            else if (pbReproduccion.Value > (4 * 60 + 17) && pbReproduccion.Value < (4 * 60 + 25))
+            {
+                lblLetra.Text = "EVERYWHERE I GO, THESE MOMENTS WILL SHINE";
+            }
+            else if (pbReproduccion.Value > (4 * 60 + 25) && pbReproduccion.Value < (4 * 60 + 29))
+            {
+                lblLetra.Text = "I'LL JUST PLAYING BACK";
+            }
+            else if (pbReproduccion.Value > (4 * 60 + 29) && pbReproduccion.Value < (4 * 60 + 32))
+            {
+                lblLetra.Text = "THESE FRAGMENTS OF TIME";
+            }
+            else if (pbReproduccion.Value > (4 * 60 + 32) && pbReproduccion.Value < (4 * 60 + 40))
+            {
+                lblLetra.Text = "THESE MOMENTS WILL SHINE";
             }
 
 

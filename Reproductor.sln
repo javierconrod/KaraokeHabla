@@ -7,9 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reproductor", "Reproductor\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{657E9A2D-3755-4A54-84F1-D536FAF88DA9}"
 	ProjectSection(SolutionItems) = preProject
-		Reproductor\bin\Debug\audio\audio.mp3 = Reproductor\bin\Debug\audio\audio.mp3
 		Reproductor\bin\Debug\audio\fragments.mp3 = Reproductor\bin\Debug\audio\fragments.mp3
-		Reproductor\bin\Debug\audio\gema.mp3 = Reproductor\bin\Debug\audio\gema.mp3
 	EndProjectSection
 EndProject
 Global
